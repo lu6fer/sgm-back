@@ -52,7 +52,7 @@ UserSchema.static({
         if (user) {
           return user;
         }
-        const err = new APIError('No such user exists!', httpStatus.NOT_FOUND);
+        const err = new APIError('Not an endpoint', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       });
   },

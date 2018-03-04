@@ -13,7 +13,7 @@ const RegulatorSchema = new Schema({
   usage: { type: 'String', required: true, default: 'Air', enum: ['Air', 'Nitrox', 'O2'] },
   serialNumber: {
     stage1: { type: 'String', required: true },
-    stage2: { type: 'String', required: true },
+    stage2: { type: 'String' },
     stageOcto: { type: 'String', required: true }
   },
   buy: {
@@ -63,7 +63,7 @@ RegulatorSchema.statics = {
         if (regulator) {
           return regulator;
         }
-        const err = new APIError('No such bcd exists!', httpStatus.NOT_FOUND);
+        const err = new APIError('Not an endpoint', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       });
   },

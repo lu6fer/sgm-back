@@ -71,7 +71,7 @@ TankSchema.statics = {
         if (tank) {
           return tank;
         }
-        const err = new APIError('No such tank exists!', httpStatus.NOT_FOUND);
+        const err = new APIError('Not an endpoint', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       });
   },

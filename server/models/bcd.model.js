@@ -53,7 +53,7 @@ BcdSchema.statics = {
         if (bcd) {
           return bcd;
         }
-        const err = new APIError('No such bcd exists!', httpStatus.NOT_FOUND);
+        const err = new APIError('Not an endpoint', httpStatus.NOT_FOUND);
         return Promise.reject(err);
       });
   },
